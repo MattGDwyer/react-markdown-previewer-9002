@@ -64,12 +64,18 @@ function App() {
 
   return (
     <div className="container">
+      <div className="editor-wrapper">
+        <span className="window-title">Editor</span>
       <textarea id="editor" value={markdown} onChange={handleChange} />
-      <div
-        className="preview"
-        id="preview"
-        dangerouslySetInnerHTML={renderMarkdown()}
-      />
+      </div>
+      <div className="preview-wrapper">
+        <span className='window-title-preview'>Preview</span>
+        <div
+          className="preview"
+          id="preview"
+          dangerouslySetInnerHTML={renderMarkdown()}
+        />
+      </div>
     </div>
   );
 }
