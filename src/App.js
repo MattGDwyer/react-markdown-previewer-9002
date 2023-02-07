@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { marked } from 'marked';
 import './App.css';
 
+
+marked.setOptions({
+  breaks: true
+});
+
 function App() {
   const [markdown, setMarkdown] = useState(`
   # Welcome to my React Markdown Previewer!
@@ -59,9 +64,10 @@ function App() {
 
   return (
     <div className="container">
-      <textarea value={markdown} onChange={handleChange} />
+      <textarea id="editor" value={markdown} onChange={handleChange} />
       <div
         className="preview"
+        id="preview"
         dangerouslySetInnerHTML={renderMarkdown()}
       />
     </div>
